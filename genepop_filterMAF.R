@@ -140,9 +140,6 @@ genepop_filterMAF <- function(genepop, where.plink, where.PGDspider, maf=0.05, p
   Loci_keep=as.character(Loci_list_maf$V2)
   
   #Write as genepop file with only snps that passed filter  
-  
-
-  write_path <- gsub(x = genepop, pattern = ".txt", replacement = "")
   genepopedit::subset_genepop(genepop, subs = Loci_keep, keep = T, path = paste0(path))
   
 
