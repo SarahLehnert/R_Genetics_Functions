@@ -1,4 +1,3 @@
-
 # Filter genepop file for MAF
 #' @title Filters genepop file for MAF
 #' @description Converts genepop file to PED and filters for MAF using plink and returns genepop file with only SNPs that pass filter

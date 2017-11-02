@@ -1,4 +1,3 @@
-
 ##Function to generate LD-Fst relationship plot and LD heatmap for top 500 high Fst loci for two groups/populations/morphs
 ##Require R packages: diveRsity, gplots, genepopedit, data.table
 #Input genepop file with only two groups/populations and include path for plink and PGDspider
