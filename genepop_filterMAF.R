@@ -4,13 +4,13 @@
 #' @param genepop A file path to the genepop format file you wish to filter
 #' @param where.plink A file path to the PLINK installation folder.
 #' @param where.pgdspider A file path to the PGDspider installation folder.
-#' @rdname maf Minor allele frequency cutoff
+#' @rdname maf Minor allele frequency cutoff (default = 0.05)
 #' @export
 #' @importFrom genepopedit
 #' @importFrom data.table
 
 
-genepop_filterMAF <- function(genepop, where.plink, where.PGDspider, maf) {
+genepop_filterMAF <- function(genepop, where.plink, where.PGDspider, maf=0.05, path) {
   
   
   #Using the new genepop files generated - run through plink
@@ -139,10 +139,12 @@ genepop_filterMAF <- function(genepop, where.plink, where.PGDspider, maf) {
   Loci_list_maf=data.table::fread(paste(where.plink, "plink.bim", sep="/"), header=F)
   Loci_keep=as.character(Loci_list_maf$V2)
   
-  #Write as genepop file with only snps that passed filter
-  write_path <- gsub(x = genepop, pattern = ".txt", replacement = "")
-  genepopedit::subset_genepop(genepop, subs = Loci_keep, keep = T, path = paste0(write_path,  paste0(maf, "MAF.txt")))
+  #Write as genepop file with only snps that passed filter  
   
-}
 
+  write_path <- gsub(x = genepop, pattern = ".txt", replacement = "")
+  genepopedit::subset_genepop(genepop, subs = Loci_keep, keep = T, path = paste0(path))
+  
+
+}
 
