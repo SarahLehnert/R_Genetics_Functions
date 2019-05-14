@@ -9,7 +9,7 @@ LD_Fst_Heatmap <- function(genepop, where.plink, where.PGDspider) {
   writeLines("Require R packages: diveRsity, gplots, genepopedit, data.table\n\n")
   
   
-  #Console message
+  #Console message to ouput
   writeLines("Calculating pairwise Fst\n\n")
   
   #generate locus specific Fst values between the two populations
